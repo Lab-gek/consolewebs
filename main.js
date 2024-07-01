@@ -34,7 +34,7 @@ window.onload = function() {
                             const jsonData = JSON.parse(data);
                             // Use jsonData
                         } catch (error) {
-                            console.log("hu!") // Fetch the projects from the Projects.json file
+                            console.log("hu!") // Fetch the projects from the projects.json file
                         }})
 
                 consoleText.innerHTML += 'Projects:<br>';
@@ -57,7 +57,7 @@ window.onload = function() {
                                 const jsonData = JSON.parse(data);
                                 // Use jsonData
                             } catch (error) {
-                                console.log("hu!") }})// Fetch the projects from the Projects.json file
+                                console.log("hu!") }})// Fetch the projects from the projects.json file
                     const project = projects.find(project => project.name === projectName); // Find the project with the given name
                     if (project) {
                         consoleText.innerHTML += 'Project naam: ' + project.name + '<br><br>';
