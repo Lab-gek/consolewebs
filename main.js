@@ -27,7 +27,16 @@ window.onload = function() {
                 consoleText.innerHTML += 'Beschikbare commands<br>help - Laat de help tekst zien<br>projects - List all projects<br>project -<name> - Display information about the project with the given name<br>';
                 break;
             case 'projects':
-                const projects = await fetch('projects.json').then(response => response.json()); // Fetch the projects from the Projects.json file
+                const projects = await fetch('projects.json')
+                    .then(response => response.text())
+                    .then(data => {
+                        try {
+                            const jsonData = JSON.parse(data);
+                            // Use jsonData
+                        } catch (error) {
+                            console.log("hu!") // Fetch the projects from the Projects.json file
+                        }})
+
                 consoleText.innerHTML += 'Projects:<br>';
                 projects.forEach(project => {
                     consoleText.innerHTML += '* ' + project.name + '<br>'; // Display each project name with a '*' in front
@@ -41,7 +50,14 @@ window.onload = function() {
             case 'project':
                 if (subCommand.startsWith('-')) {
                     const projectName = subCommand.slice(1); // Remove the '-' from the sub-command to get the project name
-                    const projects = await fetch('projects.json').then(response => response.json()); // Fetch the projects from the Projects.json file
+                    const projects = await fetch('projects.json')
+                        .then(response => response.text())
+                        .then(data => {
+                            try {
+                                const jsonData = JSON.parse(data);
+                                // Use jsonData
+                            } catch (error) {
+                                console.log("hu!") }})// Fetch the projects from the Projects.json file
                     const project = projects.find(project => project.name === projectName); // Find the project with the given name
                     if (project) {
                         consoleText.innerHTML += 'Project naam: ' + project.name + '<br><br>';
