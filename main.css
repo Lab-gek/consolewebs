@@ -49,3 +49,12 @@ body{
     overflow-y: auto;
     height: 340px;
 }
+body {
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: #ecbd02;
+}

@@ -3,7 +3,7 @@ window.onload = function() {
     const consoleText = document.getElementById('console-text');
 
     // Add a welcome message to the console on page load
-    consoleText.innerHTML += 'Welcome to Thijmen\'s console!<br>';
+    consoleText.innerHTML += 'Welkom bij Thijmen\'s console!<br> Type help om te beginnen <br>';
 
     consoleIn.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
@@ -27,16 +27,21 @@ window.onload = function() {
                 consoleText.innerHTML += 'Beschikbare commands<br>help - Laat de help tekst zien<br>projects - List all projects<br>project -<name> - Display information about the project with the given name<br>';
                 break;
             case 'projects':
-                const projects = await fetch('data.json').then(response => response.json()); // Fetch the projects from the data.json file
+                const projects = await fetch('projects.json').then(response => response.json()); // Fetch the projects from the Projects.json file
                 consoleText.innerHTML += 'Projects:<br>';
                 projects.forEach(project => {
                     consoleText.innerHTML += '* ' + project.name + '<br>'; // Display each project name with a '*' in front
                 });
                 break;
+            case 'clear':
+                consoleText.innerHTML = ''; // Clear the console text
+                break;
+            case 'thijmen':
+                consoleText.innerHTML += '<br>> Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor <a href="mailto:b136117@atlascollege.nl">Voor O&O en school</a> en <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken'
             case 'project':
                 if (subCommand.startsWith('-')) {
                     const projectName = subCommand.slice(1); // Remove the '-' from the sub-command to get the project name
-                    const projects = await fetch('data.json').then(response => response.json()); // Fetch the projects from the data.json file
+                    const projects = await fetch('projects.json').then(response => response.json()); // Fetch the projects from the Projects.json file
                     const project = projects.find(project => project.name === projectName); // Find the project with the given name
                     if (project) {
                         consoleText.innerHTML += 'Project Name: ' + project.name + '<br>';
