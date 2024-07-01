@@ -10,6 +10,8 @@ window.onload = function() {
             event.preventDefault();
             processCommand(consoleIn.value);
             consoleIn.value = '';
+            consoleText.scrollTop = consoleText.scrollHeight;
+
         }
     });
 
@@ -18,28 +20,20 @@ window.onload = function() {
         const commandParts = command.split(' '); // Split the command into parts
         const mainCommand = commandParts[0]; // The main command is the first part
         const subCommand = commandParts[1]; // The sub-command (if any) is the second part
-        const maxLines = 100; // Maximum number of lines to display in the console
+        consoleText.innerHTML += '<span class="console-prefix">Thijmen@web:~: </span>' + command + '<br>';
+
 
 
 
         switch (mainCommand) {
             case 'help':
-                consoleText.innerHTML += 'Beschikbare commands<br>help - Laat de help tekst zien<br>projects - List all projects<br>project -<name> - Display information about the project with the given name<br>';
+                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bebaalde project zien<br>';
                 break;
             case 'projects':
-                const projects = await fetch('projects.json')
-                    .then(response => response.text())
-                    .then(data => {
-                        try {
-                            const jsonData = JSON.parse(data);
-                            // Use jsonData
-                        } catch (error) {
-                            console.log("hu!") // Fetch the projects from the projects.json file
-                        }})
-
+                const projects = await getProjectsData();
                 consoleText.innerHTML += 'Projects:<br>';
                 projects.forEach(project => {
-                    consoleText.innerHTML += '* ' + project.name + '<br>'; // Display each project name with a '*' in front
+                    consoleText.innerHTML += '* ' + project.name + '<br>'; // Display each project name with a '*'
                 });
                 break;
             case 'clear':
@@ -47,17 +41,12 @@ window.onload = function() {
                 break;
             case 'thijmen':
                 consoleText.innerHTML += '<br>> Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor <a href="mailto:b136117@atlascollege.nl">Voor O&O en school</a> en <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken'
+                break
             case 'project':
+                const subCommand = commandParts.length > 1 ? commandParts[1] : null;
                 if (subCommand.startsWith('-')) {
                     const projectName = subCommand.slice(1); // Remove the '-' from the sub-command to get the project name
-                    const projects = await fetch('projects.json')
-                        .then(response => response.text())
-                        .then(data => {
-                            try {
-                                const jsonData = JSON.parse(data);
-                                // Use jsonData
-                            } catch (error) {
-                                console.log("hu!") }})// Fetch the projects from the projects.json file
+                    const projects = await getProjectsData();
                     const project = projects.find(project => project.name === projectName); // Find the project with the given name
                     if (project) {
                         consoleText.innerHTML += 'Project naam: ' + project.name + '<br><br>';
@@ -76,4 +65,17 @@ window.onload = function() {
                 consoleText.innerHTML += 'Onbekend: ' + command + '. Type "help" voor een list van alle commands<br>';
         }
                     }
+}
+
+
+
+async function getProjectsData() {
+    const response = await fetch('projects.json');
+    const data = await response.text();
+    try {
+        const jsonData = JSON.parse(data);
+        return jsonData;
+    } catch (error) {
+        console.log("Error parsing JSON data: ", error);
+    }
 }

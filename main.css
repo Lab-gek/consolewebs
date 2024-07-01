@@ -1,5 +1,8 @@
 body{
     background : rgba(0, 128, 255, 0.72);
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 .container{
     display: flex;
@@ -17,11 +20,10 @@ body{
     flex-flow: column;
  }
 .upbar{
-
     background: brown;
     text-align: center;
-    width: 760px;
-    height: 360px;
+
+
 }
 
 .cconsole{
@@ -32,29 +34,31 @@ body{
     color: white;
     font-size: 20px;
     padding: 10px;
-
-
     width: 740px;
 
-    max-height: 360px;
 }
 .console-type{
     margin-top: auto;
 
 }
 .console-in{
-    width: 740px;
+    width: 550px;
+    outline: none; /* Remove the outline */
+    background: transparent; /* Make the background transparent */
+    border: none; /* Remove the border */
+    color: white; /* Set the text color to white */
+    font-family: "Share Tech Mono", monospace;
+    font-size: 20px; /* Increase the font size */
 }
 .console-text{
     overflow-y: auto;
-    height: 340px;
+    max-height: 340px;
 }
-body {
-    font-family: "Share Tech Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-}
+
 a{
     text-decoration: none;
+    color: #ecbd02;
+}
+.console-prefix{
     color: #ecbd02;
 }
