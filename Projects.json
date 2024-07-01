@@ -1,16 +1,20 @@
 [
 
   {
-    "name": "STI",
-    "description": "Een o&o ontwerp opdracht voor STI engeneering",
-    "status": "Completed"
+    "name": "sti",
+    "description": "Een o&o ontwerp opdracht voor STI engeneering. Het eindproduct is een 3d animatie van het eind ontwerp",
+    "skils": "samenwerken, product ontwerp, 3d animatie ",
+    "status": "Klaar"
   },
   {
     "name": "doomsdayclicker",
     "description": "Een game over het uit sterven van de aarde Zie deze link voor de game <a href='https://snap.berkeley.edu/project?username=thijmenvg&projectname=Doomsday%20clicker'>Hier</a>",
+    "skils": "samenwerken, Progameren, Game design",
     "status": "Completed"
   },
   {
-    "name": ""
+    "name": "weer",
+    "description": "Een custom weer app met de API van buienradar, je kan de website <a href='https://skelter-studio-s.github.io/weer-app/'>Hier</a> bezoeken",
+    "status": "Completed"
   }
 ]

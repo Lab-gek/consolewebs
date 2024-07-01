@@ -44,8 +44,8 @@ window.onload = function() {
                     const projects = await fetch('projects.json').then(response => response.json()); // Fetch the projects from the Projects.json file
                     const project = projects.find(project => project.name === projectName); // Find the project with the given name
                     if (project) {
-                        consoleText.innerHTML += 'Project Name: ' + project.name + '<br>';
-                        consoleText.innerHTML += 'Description: ' + project.description + '<br>';
+                        consoleText.innerHTML += 'Project naam: ' + project.name + '<br><br>';
+                        consoleText.innerHTML += 'Beschrijving: ' + project.description + '<br><br>';
                         consoleText.innerHTML += 'Status: ' + project.status + '<br>';
                     } else {
                         // If the project is not found, display an error message
