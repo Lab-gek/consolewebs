@@ -1,0 +1,51 @@
+body{
+    background : rgba(0, 128, 255, 0.72);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow:column;
+}
+.console{
+    background: rgb(0, 34, 255);
+    width:760px;
+    height: 360px;
+    align-self: center;
+    margin-top: 15%;
+    display: flex;
+    flex-flow: column;
+ }
+.upbar{
+
+    background: brown;
+    text-align: center;
+    width: 760px;
+    height: 360px;
+}
+
+.cconsole{
+
+}
+.console-out{
+    background: rgb(0, 34, 255);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+
+
+    width: 740px;
+
+    max-height: 360px;
+}
+.console-type{
+    margin-top: auto;
+
+}
+.console-in{
+    width: 740px;
+}
+.console-text{
+    overflow-y: auto;
+    height: 340px;
+}
