@@ -25,7 +25,7 @@ window.onload = function() {
 
         switch (mainCommand) {
             case 'help':
-                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bebaalde project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>';
+                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>';
                 break;
             case 'projects':
                 const projects = await getProjectsData();
@@ -89,7 +89,7 @@ window.onload = function() {
                     const projects = await getProjectsData();
                     const project = projects.find(project => project.name === projectName);
                     if (project && project.descriptionl) {
-                        document.querySelector('.meer-content').innerHTML = `${project.descriptionl} <button onclick="closeMeerScreen()">Close</button>`;
+                        document.querySelector('.meer-content').innerHTML = `${project.descriptionl} <button onclick="closeMeerScreen()" class="sluitbutton">X</button>`;
                         document.getElementById('meerScreen').style.display = 'block';
                     } else {
                         consoleText.innerHTML += 'Project ' + projectName + ' not found or does not have an extended description.<br>';

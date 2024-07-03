@@ -16,7 +16,7 @@ body{
     width:760px;
     height: 360px;
     align-self: center;
-    margin-top: 15%;
+    margin-top: 10%;
     display: flex;
     flex-flow: column;
  }
@@ -63,4 +63,18 @@ a{
 }
 .console-prefix{
     color: #ecbd02;
+}
+.meer-screen{
+    background: #6aa52a;
+
+    font-size: 20px;
+    padding: 10px;
+    width: 740px;
+    margin-top: 10px;
+}
+.sluitbutton{
+    background: rgb(0, 34, 255);
+    text-align: center;
+    cursor: pointer;
+    border-style: none;
 }

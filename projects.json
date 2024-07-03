@@ -17,5 +17,12 @@
     "description": "Een custom weer app met de API van buienradar, je kan de website <a href='https://skelter-studio-s.github.io/weer-app/'>Hier</a> bezoeken",
     "status": "Completed",
     "descriptionl": "<h1> Weer weer app</h1> <p>Deze website is gemaakt als opdracht voor informatica. Waar bij we javascript moeten gaan leren en een Weer app maken met de API van buienradar. Waar bij onze uitwerking een 10 van onze docent heeft gekregen</p> <p>Sils die ik heb gerbuikt tijdens deze opdracht. *Samenwerken. *Progameren HTLM CSS JS *Plannen  </p> "
+  },
+  {
+    "name": "comp",
+    "description": "Gebruik de meer -comp",
+    "status": "-",
+    "descriptionl": "wip"
+
   }
 ]
