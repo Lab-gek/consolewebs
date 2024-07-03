@@ -29,7 +29,6 @@ body{
 }
 
 .cconsole{
-
 }
 .console-out{
     background: rgb(0, 34, 255);
@@ -41,7 +40,6 @@ body{
 }
 .console-type{
     margin-top: auto;
-
 }
 .console-in{
     width: 550px;
@@ -66,7 +64,6 @@ a{
 }
 .meer-screen{
     background: #6aa52a;
-
     font-size: 20px;
     padding: 10px;
     width: 740px;

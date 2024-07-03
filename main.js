@@ -25,7 +25,7 @@ window.onload = function() {
 
         switch (mainCommand) {
             case 'help':
-                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>';
+                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien <br> meer -[naam] |Laat meer nog meer informatie van een project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>';
                 break;
             case 'projects':
                 const projects = await getProjectsData();
@@ -97,6 +97,9 @@ window.onload = function() {
                 } else {
                     consoleText.innerHTML += 'Incorrect command. Use "meer -[name]" to display extended information about a project.<br>';
                 }
+                break;
+            case 'versie':
+                consoleText.innerHTML += 'Dit is versie eeehhmmm????????? 0.1Alpha relase 5 build 42 "de mol is een mol"<br>';
                 break;
             default:
                 consoleText.innerHTML += 'Commando niet gevonden. Type "help" voor een lijst met beschikbare commands<br>';
