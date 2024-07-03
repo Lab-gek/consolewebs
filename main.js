@@ -3,7 +3,7 @@ window.onload = function() {
     const consoleText = document.getElementById('console-text');
 
     // Add a welcome message to the console on page load
-    consoleText.innerHTML += 'Welkom bij Thijmen\'s console!<br> Type help om te beginnen <br>';
+    consoleText.innerHTML += 'Welkom bij Thijmen\'s console!<br> Type help en druk op enter om te beginnen <br>';
 
     consoleIn.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
@@ -23,11 +23,9 @@ window.onload = function() {
         consoleText.innerHTML += '<span class="console-prefix">Thijmen@web:~: </span>' + command + '<br>';
 
 
-
-
         switch (mainCommand) {
             case 'help':
-                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bebaalde project zien<br>';
+                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bebaalde project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>';
                 break;
             case 'projects':
                 const projects = await getProjectsData();
@@ -40,7 +38,7 @@ window.onload = function() {
                 consoleText.innerHTML = ''; // Clear the console text
                 break;
             case 'thijmen':
-                consoleText.innerHTML += '<br>> Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor <a href="mailto:b136117@atlascollege.nl">Voor O&O en school</a> en <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken'
+                consoleText.innerHTML += ' Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor <a href="mailto:b136117@atlascollege.nl">Voor O&O en school</a> en <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken<br>'
                 break
             case 'project':
                 const subCommand = commandParts.length > 1 ? commandParts[1] : null;
@@ -58,15 +56,54 @@ window.onload = function() {
                     }
                 } else {
                     // If the sub-command does not start with '-', display an error message
-                    consoleText.innerHTML += 'Verkeede command. Gebruik "project -<name>" om de informatie over een project met de naam te weertegeven <br>';
+                    consoleText.innerHTML += 'Verkeede command. Gebruik "project -[name]" om de informatie over een project met de naam te weertegeven <br>';
+                }
+                break;
+            case 'woorden':
+                const woorden = await getwoordenData();
+                consoleText.innerHTML += 'Woorden:<br>';
+                woorden.forEach(woord => {
+                    consoleText.innerHTML += '* ' + woord.woord + '<br>'; // Display each project name with a '*'
+                });
+                break;
+            case 'woord':
+                subCommandw = commandParts.length > 1 ? commandParts[1] : null;
+                if (subCommandw.startsWith('-')) {
+                    const woordName = subCommandw.slice(1);
+                    const woorden = await getwoordenData();
+                    const woord = woorden.find(woord => woord.woord === woordName);
+                    if (woord) {
+                        consoleText.innerHTML += 'Woord: ' + woord.woord + '<br>';
+                        consoleText.innerHTML += 'Betekenis: ' + woord.beschrijving + '<br>';
+                    } else {
+                        consoleText.innerHTML += 'Woord ' + woordName + ' not found.<br>';
+                    }
+                } else {
+                    consoleText.innerHTML += 'Verkeede command. Gebruik "woord -[name]" om de informatie over een woord met de naam te weertegeven <br>';
+                }
+                break;
+            case 'meer':
+                const meerSubCommand = commandParts.length > 1 ? commandParts[1] : null;
+                if (meerSubCommand && meerSubCommand.startsWith('-')) {
+                    const projectName = meerSubCommand.slice(1);
+                    const projects = await getProjectsData();
+                    const project = projects.find(project => project.name === projectName);
+                    if (project && project.descriptionl) {
+                        document.querySelector('.meer-content').innerHTML = `${project.descriptionl} <button onclick="closeMeerScreen()">Close</button>`;
+                        document.getElementById('meerScreen').style.display = 'block';
+                    } else {
+                        consoleText.innerHTML += 'Project ' + projectName + ' not found or does not have an extended description.<br>';
+                    }
+                } else {
+                    consoleText.innerHTML += 'Incorrect command. Use "meer -[name]" to display extended information about a project.<br>';
                 }
                 break;
             default:
-                consoleText.innerHTML += 'Onbekend: ' + command + '. Type "help" voor een list van alle commands<br>';
+                consoleText.innerHTML += 'Commando niet gevonden. Type "help" voor een lijst met beschikbare commands<br>';
+                break
         }
-                    }
+    }
 }
-
 
 
 async function getProjectsData() {
@@ -78,4 +115,18 @@ async function getProjectsData() {
     } catch (error) {
         console.log("Error parsing JSON data: ", error);
     }
+}
+async function getwoordenData(){
+    const response = await fetch('woordenboek.json');
+    const data = await response.text();
+    try {
+        const jsonDataW = JSON.parse(data);
+        return jsonDataW;
+    } catch (error) {
+        console.log("Error parsing JSON data: ", error);
+    }
+}
+
+function closeMeerScreen() {
+    document.getElementById('meerScreen').style.display = 'none';
 }
