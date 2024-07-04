@@ -12,7 +12,7 @@ body{
     flex-flow:column;
 }
 .console{
-    background: rgb(0, 34, 255);
+    background: rgb(24, 112, 11);
     width:760px;
     height: 360px;
     align-self: center;
@@ -31,7 +31,7 @@ body{
 .cconsole{
 }
 .console-out{
-    background: rgb(0, 34, 255);
+    background: rgb(24, 112, 11);
     color: white;
     font-size: 20px;
     padding: 10px;
@@ -74,4 +74,7 @@ a{
     text-align: center;
     cursor: pointer;
     border-style: none;
+}
+.texst-c{
+    text-align: center;
 }
