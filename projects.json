@@ -3,7 +3,7 @@
     "name": "sti",
     "description": "Een o&o ontwerp opdracht voor STI engeneering. Het eindproduct is een 3d animatie van het eind ontwerp ",
     "status": "Klaar",
-    "descriptionl": "<h1>STI</h1> <p>STI is een O&O opdracht waarbij wij een ontwerp moesten maken voor STI engeneering. Hun probleem was dat ze niet opvallend genoeg waren voor op beursen waar ze naartoe wilde. en daarom voregen ze ons om advies, aangezien ze boten van 50+ meter maken, is het niet practies om een boot mee tenemen naar de beurs stand. Hier voor hadden ze al een oploosing bedacht, een 3d progamma waar in alles kan worden aan gepast zo dat de klant ziet wat word gekocht. Om dit beter te kunnen tonen hebben wij een inklapbare tavel gemaakt, en het concept hier van in een 3d animatie laten zien. <br> De skils die ik heb gebruikt zijn: *Samenwerken *Product ontwerp *3d animatie </p>"
+    "descriptionl": "<h1>STI</h1> <p>STI is een O&O opdracht waarbij wij een ontwerp moesten maken voor STI engeneering. Hun probleem was dat ze niet opvallend genoeg waren voor op beursen waar ze naartoe wilde. en daarom vroegen ze ons om advies, aangezien ze boten van 50+ meter maken, is het niet practies om een boot mee te nemen naar de beurs stend. Hier voor hadden ze al een oploosing bedacht, een 3d progamma waar in alles kan worden aan gepast zo dat de klant ziet wat er word gekocht. Om dit beter te kunnen tonen hebben wij een inklapbare tafel gemaakt, en het concept hier van in een 3d animatie laten zien. <br> De skills die ik heb gebruikt zijn: *Samenwerken *Product ontwerp *3d animatie </p>"
   },
   {
     "name": "doomsdayclicker",
@@ -20,12 +20,14 @@
   {
     "name": "comp",
     "description": "Gebruik de meer -comp",
-    "status": "-",
+    "status": "nooit klaar",
     "descriptionl": "<h1>Competenties</h1> <p>Zelf ben ik goed in probleem oplossend denken, even als samen werken. Als het nodig is kan je mij ook planning laten doen.<br> Ook ben ik zelf vrij creative, (hoe vaak heb je zo'n portofolio gezien?) <br> Probleemanalyse ben ik best wel goed in. Ook ben ik goed in het maken van bijzondere oplossingen en 'Going the next mile' met een project om er voor te zorgen dat het eind resultaat goed is. </p>"
 
   },
   {
     "name": "ursem",
-    "description": "Een O&O opdracht waarbij wij een ruimtelijk probleem moetsen oplossen voor Ursem Modulaire Bouwsystemen <br> Beta werled was hier voor mobiliteit en ruimte"
+    "description": "Een O&O opdracht waarbij wij een ruimtelijk probleem moetsen oplossen voor Ursem Modulaire Bouwsystemen <br> Beta werled was hier voor mobiliteit en ruimte",
+    "status": "Klaar",
+    "descriptionl": "<h1>Ursem Modulaire Bouwsystemen</h1> <p>Ursem Modulaire Bouwsystemen is een O&O opdracht waarbij wij een oplossing moesten bedenken voor het opslaan van hun woon modules, hier van worden er 3 perdag gemaakt en soms wel 30 op 1 dag af gehaald. Om dit beter te laten gaan hebben zij ons benaderd met de vraag voor een oplossing. <br> skills die ik bij deze opdracht heb gebruikt zijn *leiding geven *probleem oplossend denken, *Probleemanalyse *Presenteren.  </p>"
   }
 ]
