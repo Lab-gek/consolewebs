@@ -25,8 +25,8 @@ window.onload = function() {
 
         switch (mainCommand) {
             case 'help':
-                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien <br> meer -[naam] |Laat meer nog meer informatie van een project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>' +
-                    'Doelmatigheid | Een inspirerende quote. <br>';
+                consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien <br> meer -[naam] |Laat meer nog meer informatie van een project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br>' +
+                    'doelmatigheid | Een inspirerende quote. <br>hobbies| Laat een lijst van mijn hobbies zien<br>';
                 break;
             case 'projects':
                 const projects = await getProjectsData();
@@ -39,7 +39,7 @@ window.onload = function() {
                 consoleText.innerHTML = ''; // Clear the console text
                 break;
             case 'thijmen':
-                consoleText.innerHTML += ' Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor de e-mail addressen als je het over<a href="mailto:b136117@atlascollege.nl"> O&O en school</a> of <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken wilt hebben<br>'
+                consoleText.innerHTML += ' Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, kijk in dit stukje voor de e-mail addressen als je het over<a href="mailto:b136117@atlascollege.nl"> O&O en school</a> of <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken wilt hebben<br>'
                 break
             case 'project':
                 const subCommand = commandParts.length > 1 ? commandParts[1] : null;
@@ -58,29 +58,6 @@ window.onload = function() {
                 } else {
                     // If the sub-command does not start with '-', display an error message
                     consoleText.innerHTML += 'Verkeede command. Gebruik "project -[name]" om de informatie over een project met de naam te weertegeven <br>';
-                }
-                break;
-            case 'woorden':
-                const woorden = await getwoordenData();
-                consoleText.innerHTML += 'Woorden:<br>';
-                woorden.forEach(woord => {
-                    consoleText.innerHTML += '* ' + woord.woord + '<br>'; // Display each project name with a '*'
-                });
-                break;
-            case 'woord':
-                subCommandw = commandParts.length > 1 ? commandParts[1] : null;
-                if (subCommandw.startsWith('-')) {
-                    const woordName = subCommandw.slice(1);
-                    const woorden = await getwoordenData();
-                    const woord = woorden.find(woord => woord.woord === woordName);
-                    if (woord) {
-                        consoleText.innerHTML += 'Woord: ' + woord.woord + '<br>';
-                        consoleText.innerHTML += 'Betekenis: ' + woord.beschrijving + '<br>';
-                    } else {
-                        consoleText.innerHTML += 'Woord ' + woordName + ' not found.<br>';
-                    }
-                } else {
-                    consoleText.innerHTML += 'Verkeede command. Gebruik "woord -[name]" om de informatie over een woord met de naam te weertegeven <br>';
                 }
                 break;
             case 'meer':

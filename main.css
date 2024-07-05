@@ -16,7 +16,7 @@ body{
     width:760px;
     height: 360px;
     align-self: center;
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     flex-flow: column;
  }
@@ -70,10 +70,11 @@ a{
     margin-top: 10px;
 }
 .sluitbutton{
-    background: rgb(0, 34, 255);
+    background: rgb(255, 0, 0);
     text-align: center;
     cursor: pointer;
     border-style: none;
+    text-color: white;
 }
 .texst-c{
     text-align: center;

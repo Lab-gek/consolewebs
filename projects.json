@@ -9,13 +9,13 @@
     "name": "doomsdayclicker",
     "description": "Een game over het uit sterven van de aarde Zie deze link voor de game <a href='https://snap.berkeley.edu/project?username=thijmenvg&projectname=Doomsday%20clicker'>Hier</a>",
     "status": "Klaar",
-    "descriptionl": "<h1>Doomsday clicker</h1> <p>Doomsday clicker is een game die ik heb gemaakt voor informatica. Het is een game waarbij je de aarde naar een ramp to helpt. De game is gemaakt in Snap! <br> De skils die ik heb gebruikt zijn: *Samenwerken *Progameren *Planning *Creatief denken *game design</p>"
+    "descriptionl": "<h1>Doomsday clicker</h1> <p>Doomsday clicker is een game die ik heb gemaakt voor informatica. Het is een game waarbij je de aarde naar een ramp toe helpt. De game is gemaakt in Snap! <br> De skils die ik heb gebruikt zijn: *Samenwerken *Progameren *Planning *Creatief denken *Game design</p>"
   },
   {
     "name": "weer",
     "description": "Een custom weer app met de API van buienradar, je kan de website <a href='https://skelter-studio-s.github.io/weer-app/'>Hier</a> bezoeken",
     "status": "Klaar",
-    "descriptionl": "<h1> Weer weer app</h1> <p>De Weer weer app is gemaakt als opdracht voor informatica. Waar bij we javascript moeten gaan leren en een Weer app maken met de API van buienradar. Waar bij onze uitwerking een 10 van onze docent heeft gekregen</p> <p>skils die ik heb gerbuikt tijdens deze opdracht. *Samenwerken. *Progameren HTLM CSS JS (Javascript) *Plannen  </p> "
+    "descriptionl": "<h1> Weer weer app</h1> <p>De Weer weer app is gemaakt als opdracht voor informatica. Waar bij we javascript moesten gaan leren en een Weer app maken met de API van buienradar. Waarbij onze uitwerking een 10 van onze docent heeft gekregen</p> <p>skils die ik heb gerbuikt tijdens deze opdracht. *Samenwerken. *Progameren HTLM CSS JS (Javascript) *Plannen  </p> "
   },
   {
     "name": "comp",
@@ -26,8 +26,8 @@
   },
   {
     "name": "ursem",
-    "description": "Een O&O opdracht waarbij wij een ruimtelijk probleem moetsen oplossen voor Ursem Modulaire Bouwsystemen <br> Beta werled was hier voor mobiliteit en ruimte",
+    "description": "Een O&O opdracht waarbij wij een ruimtelijk probleem moetsen oplossen voor Ursem Modulaire Bouwsystemen <br> Betawereld  was hier voor mobiliteit en ruimte",
     "status": "Klaar",
-    "descriptionl": "<h1>Ursem Modulaire Bouwsystemen</h1> <p>Ursem Modulaire Bouwsystemen is een O&O opdracht waarbij wij een oplossing moesten bedenken voor het opslaan van hun woon modules, hier van worden er 3 perdag gemaakt en soms wel 30 op 1 dag af gehaald. Om dit beter te laten gaan hebben zij ons benaderd met de vraag voor een oplossing. <br> skills die ik bij deze opdracht heb gebruikt zijn *leiding geven *probleem oplossend denken, *Probleemanalyse *Presenteren. <br> betawereld:  mobiliteit en ruimte.  </p>"
+    "descriptionl": "<h1>Ursem Modulaire Bouwsystemen</h1> <p>Ursem Modulaire Bouwsystemen is een O&O opdracht waarbij wij een oplossing moesten bedenken voor het opslaan van hun woon modules, hier van worden er 3 per dag gemaakt en soms wel 30 op één dag af gehaald. Om dit beter te laten gaan. Hebben zij ons benaderd met de vraag voor een oplossing. <br> skills die ik bij deze opdracht heb gebruikt zijn *leiding geven *probleem oplossend denken, *Probleemanalyse *Presenteren. <br> betawereld:  mobiliteit en ruimte.  </p>"
   }
 ]
