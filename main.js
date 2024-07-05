@@ -107,6 +107,7 @@ window.onload = function() {
                 break
             case 'hobbies':
                 consoleText.innerHTML += 'Sommige van mijn hobbies zijn: Muziek spelen (trompet) Fietsen, (Natuur)Fotografie, Zwemmen en progameren<br>'
+                break
             default:
                 consoleText.innerHTML += 'Commando niet gevonden. Type "help" voor een lijst met beschikbare commands<br>';
                 break
