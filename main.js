@@ -26,7 +26,7 @@ window.onload = function() {
         switch (mainCommand) {
             case 'help':
                 consoleText.innerHTML += 'Beschikbare commands<br>help | Laat de help tekst zien<br>projects | Laat alle projecten zien<br>project -[naam] | Laat informatie over een bepaalde project zien <br> meer -[naam] |Laat meer nog meer informatie van een project zien<br> thijmen | Laat meer informatie over mij zien. <br>clear | Maak de console leeg<br> woord | Laat alle woorden uit het woorden boek zien <br> woord -[naam] | Laat informatie over een bebaald woord zien<br>' +
-                    'Doelmatigheid | Een inspirerende quote.';
+                    'Doelmatigheid | Een inspirerende quote. <br>';
                 break;
             case 'projects':
                 const projects = await getProjectsData();
@@ -39,7 +39,7 @@ window.onload = function() {
                 consoleText.innerHTML = ''; // Clear the console text
                 break;
             case 'thijmen':
-                consoleText.innerHTML += ' Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor <a href="mailto:b136117@atlascollege.nl">Voor O&O en school</a> en <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken<br>'
+                consoleText.innerHTML += ' Ik ben Thijmen, 16 jaar, en ik zit op De OSG Westfriesland in Hoorn ik ben nu bezig met vwo 4 met als profiel richting van N&G met O&O en informatica als je vragen hebt kan of meer informatie wilt weten, klik hier voor de e-mail addressen als je het over<a href="mailto:b136117@atlascollege.nl"> O&O en school</a> of <a href="mailto:Thijmen@groen5.nl">voor persoonelijke</a> zaken wilt hebben<br>'
                 break
             case 'project':
                 const subCommand = commandParts.length > 1 ? commandParts[1] : null;
@@ -93,7 +93,7 @@ window.onload = function() {
                         document.querySelector('.meer-content').innerHTML = `${project.descriptionl} <button onclick="closeMeerScreen()" class="sluitbutton">X</button>`;
                         document.getElementById('meerScreen').style.display = 'block';
                     } else {
-                        consoleText.innerHTML += 'Project ' + projectName + ' not found or does not have an extended description.<br>';
+                        consoleText.innerHTML += 'Project ' + projectName + ' Niet gevonden of dit project heeft geen extra beschrijving nodig.<br>';
                     }
                 } else {
                     consoleText.innerHTML += 'Incorrect command. Use "meer -[name]" to display extended information about a project.<br>';
@@ -105,6 +105,8 @@ window.onload = function() {
             case 'doelmatigheid':
                 consoleText.innerHTML += 'Doelmatigheid is een verhouding van hoe doelmatig je hebt gewerkt, 1:1 is dat je de tijd die je er in hebt gestop even veel er uit hebt gehaald bij.v 0,1:1 is heel slecht. <br> Alles is doelmatig, de hoeveelheid verschilt - S.Aken, O&O docent'
                 break
+            case 'hobbies':
+                consoleText.innerHTML += 'Sommige van mijn hobbies zijn: Muziek spelen (trompet) Fietsen, (Natuur)Fotografie, Zwemmen en progameren<br>'
             default:
                 consoleText.innerHTML += 'Commando niet gevonden. Type "help" voor een lijst met beschikbare commands<br>';
                 break
