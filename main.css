@@ -79,3 +79,11 @@ a{
 .texst-c{
     text-align: center;
 }
+
+footer {
+    text-align: center;
+
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
